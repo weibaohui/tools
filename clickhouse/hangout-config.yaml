@@ -1,0 +1,20 @@
+inputs:
+    - Kafka:
+        topic:
+            test: 1
+        codec: json
+        consumer_settings:
+            bootstrap.servers: "192.168.1.45:9092"
+            group.id: gohangout.weblog
+outputs:
+    - Clickhouse:
+        table: 'target2'
+        conn_max_life_time: 10
+        username: 'default'
+        password: ''
+        hosts:
+        - 'tcp://192.168.1.45:9000'
+        fields: ['message','host.name']
+        bulk_actions: 1000
+        flush_interval: 30
+        concurrent: 1

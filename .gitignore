@@ -388,3 +388,4 @@ yarn-debug.log*
 .history/
 gitlab/gitlab/*
 /clickhouse/data/
+/clickhouse/gohangout
